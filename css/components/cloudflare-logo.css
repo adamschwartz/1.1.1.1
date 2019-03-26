@@ -1,0 +1,6 @@
+.CloudflareLogo {
+  color: var(--cloudflare-logo-wordmark-color);
+  display: block;
+  height: 1.84em;
+  width: 5.3em;
+}

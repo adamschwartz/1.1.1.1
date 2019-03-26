@@ -1,0 +1,20 @@
+.PerformanceSection--column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 12em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.PerformanceSection--content {
+  margin-bottom: 2em;
+}
+
+.PerformanceSection--figure {
+  /* TODO */
+  background: orange;
+  height: 16em;
+  width: 16em;
+  border-radius: 50%;
+}

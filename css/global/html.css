@@ -1,0 +1,8 @@
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: 1.5;
+  color: rgb(var(--color-rgb));
+  background: rgb(var(--background-color-rgb));
+}

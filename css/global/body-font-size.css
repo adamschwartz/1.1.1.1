@@ -1,0 +1,15 @@
+body {
+  font-size: 2.1em;
+}
+
+@media (max-width: 1080px), (max-height: 650px) {
+  body {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.6em;
+  }
+}

@@ -1,0 +1,37 @@
+html[theme="dark"] {
+  --color-rgb: 250, 250, 250;
+  --cloudflare-logo-wordmark-color: rgb(var(--color-rgb));
+  --background-color-rgb: var(--black-purple-rgb);
+  --accent-color-rgb: var(--purple-rgb);
+  --nav-link-background-color-hover: rgba(255, 255, 255, .05);
+  --nav-link-background-color-active: rgba(0, 0, 0, .2);
+  --input-background-color: rgba(255, 255, 255, .06);
+  --input-placeholder-color: rgba(var(--color-rgb), .4);
+  --input-border-color: transparent;
+  --input-border-color-focused: transparent;
+  --mobile-content-section-shadow-color: rgba(0, 0, 0, .18);
+  --dialog-background-color-rgb: 23, 23, 23;
+  --subtitle-color: rgba(var(--color-rgb), .7);
+  --focus-shadow-color: rgba(var(--orange-rgb), .5);
+  --selection-background-color: #ff9e40; /* If we were to use rgb(var(--orange-rgb)) what we would get would end up looking too red. This is because the browser automatically tints/alters lighter selection background colors. For example if you specify #fff you end up with something closer to #a4a4a4. So we specify a more saturated and lighter orange to componensate such that the final composited color is as close rgb(var(--orange-rgb)) as possible */
+  --selection-color: #fff;
+}
+
+html[theme="light"] {
+  --color-rgb: var(--dark-purple-rgb);
+  --cloudflare-logo-wordmark-color: #414142;
+  --background-color-rgb: 255, 255, 255;
+  --accent-color-rgb: var(--purple-rgb);
+  --nav-link-background-color-hover: rgba(var(--accent-color-rgb), .06);
+  --nav-link-background-color-active: rgba(var(--accent-color-rgb), .1);
+  --input-background-color: rgba(135, 159, 183, .15);
+  --input-placeholder-color: rgba(94, 120, 146, .5);
+  --input-border-color: rgba(66, 89, 111, .15);
+  --input-border-color-focused: rgb(var(--accent-color-rgb));
+  --mobile-content-section-shadow-color: rgba(0, 0, 0, .08);
+  --dialog-background-color-rgb: var(--background-color-rgb);
+  --subtitle-color: rgba(var(--color-rgb), .8);
+  --focus-shadow-color: rgba(var(--accent-color-rgb), .5);
+  --selection-background-color: rgb(var(--dark-purple-rgb));
+  --selection-color: #fff;
+}

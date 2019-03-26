@@ -1,0 +1,18 @@
+.AppOverviewSection--column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 20em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.AppOverviewSection--content {
+  position: relative;
+  z-index: 2;
+}
+
+.AppOverviewSection--device-mockup {
+  position: relative;
+  z-index: 1;
+  margin-left: 8em; /* TODO - make variable? */
+}

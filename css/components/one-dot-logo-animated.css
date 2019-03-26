@@ -1,0 +1,28 @@
+.OneDotLogoAnimated {
+  width: 9em;
+}
+
+.OneDotLogoAnimated.OneDotLogoAnimated-is-centered {
+  margin-left: -2.5em;
+}
+
+.OneDotLogoAnimated.OneDotLogoAnimated-is-large {
+  width: 20em;
+}
+
+.OneDotLogoAnimated.OneDotLogoAnimated-is-large.OneDotLogoAnimated-is-centered {
+  margin-left: -1.25em;
+}
+
+.OneDotLogoAnimated--aspect-ratio-container {
+  position: relative;
+  padding-bottom: calc(var(--aspect-ratio) * 100%);
+}
+
+.OneDotLogoAnimated--canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

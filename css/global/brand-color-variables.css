@@ -1,0 +1,13 @@
+html {
+  /* Cloudflare colors */
+  /* From https://component-library.com */
+  /* Converted from hex to rgb so alpha can be applied in CSS e.g. `rgba(var(--orange-rgb), .5))` */
+  --orange-rgb:     243, 128,  32;  /* `orange`    (#f38020) */
+  --light-blue-rgb:  79, 140, 200;  /* `lightBlue` (#4f8cc8) */
+  --blue-rgb:         0,  81, 127;  /* `blue`      (#00517f) */
+
+  /* 1.1.1.1 colors */
+  --purple-rgb: 65, 54, 128;
+  --dark-purple-rgb: 34, 30, 104;
+  --black-purple-rgb: 15, 13, 55;
+}

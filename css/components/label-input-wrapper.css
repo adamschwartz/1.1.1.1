@@ -1,0 +1,20 @@
+.LabelInputWrapper {
+  position: relative;
+}
+
+.LabelInputWrapper--label {
+  position: absolute;
+  line-height: 1;
+  top: .25em;
+  left: var(--input-horizontal-padding);
+  pointer-events: none;
+}
+
+.LabelInputWrapper--label-content {
+  font-size: .6em;
+  letter-spacing: .03em;
+  font-weight: 500;
+  height: .9em;
+  text-transform: uppercase;
+  line-height: 1;
+}

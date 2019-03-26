@@ -1,0 +1,11 @@
+html {
+  --header-height: 3.5em;
+  --focus-shadow-size: .1875em;
+  --input-top-padding: 1.1em;
+  --input-bottom-padding: .3em;
+  --input-horizontal-padding: .8em;
+  --button-vertical-padding: calc((var(--input-top-padding) + var(--input-bottom-padding)) / 2);
+  --button-horizontal-padding: .8em;
+  --form-field-border-radius: .375em;
+  --form-field-line-height: 1.3;
+}

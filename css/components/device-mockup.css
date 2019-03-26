@@ -1,0 +1,42 @@
+.DeviceMockup {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 13em;
+  height: 24em;
+}
+
+.DeviceMockup--backdrop {
+  position: absolute;
+  pointer-events: none;
+}
+
+.DeviceMockup--backdrop-blob1 {
+  top: -136%;
+  left: -70%;
+  height: 430%;
+  width: 650%;
+}
+
+.DeviceMockup--backdrop-blob2 {
+  top: -235%;
+  right: -80%;
+  height: 580%;
+  width: 730%;
+}
+
+.DeviceMockup--backdrop-blob3 {
+  top: -300%;
+  left: -30%;
+  height: 550%;
+  width: 500%;
+}
+
+.DeviceMockup--device {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 .5em 1em rgba(var(--black-purple-rgb), .25);
+}

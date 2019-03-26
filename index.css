@@ -1,0 +1,586 @@
+* {
+  margin: 0;
+  box-sizing: inherit;
+}
+
+img, svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+input, textarea, button, select {
+  font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+html {
+  --header-height: 3.5em;
+  --focus-shadow-size: .1875em;
+  --input-top-padding: 1.1em;
+  --input-bottom-padding: .3em;
+  --input-horizontal-padding: .8em;
+  --button-vertical-padding: calc((var(--input-top-padding) + var(--input-bottom-padding)) / 2);
+  --button-horizontal-padding: .8em;
+  --form-field-border-radius: .375em;
+  --form-field-line-height: 1.3;
+}
+
+html {
+  /* Cloudflare colors */
+  /* From https://component-library.com */
+  /* Converted from hex to rgb so alpha can be applied in CSS e.g. `rgba(var(--orange-rgb), .5))` */
+  --orange-rgb:     243, 128,  32;  /* `orange`    (#f38020) */
+  --light-blue-rgb:  79, 140, 200;  /* `lightBlue` (#4f8cc8) */
+  --blue-rgb:         0,  81, 127;  /* `blue`      (#00517f) */
+
+  /* 1.1.1.1 colors */
+  --purple-rgb: 65, 54, 128;
+  --dark-purple-rgb: 34, 30, 104;
+  --black-purple-rgb: 15, 13, 55;
+}
+
+html[theme="dark"] {
+  --color-rgb: 250, 250, 250;
+  --cloudflare-logo-wordmark-color: rgb(var(--color-rgb));
+  --background-color-rgb: var(--black-purple-rgb);
+  --accent-color-rgb: var(--purple-rgb);
+  --nav-link-background-color-hover: rgba(255, 255, 255, .05);
+  --nav-link-background-color-active: rgba(0, 0, 0, .2);
+  --input-background-color: rgba(255, 255, 255, .06);
+  --input-placeholder-color: rgba(var(--color-rgb), .4);
+  --input-border-color: transparent;
+  --input-border-color-focused: transparent;
+  --mobile-content-section-shadow-color: rgba(0, 0, 0, .18);
+  --dialog-background-color-rgb: 23, 23, 23;
+  --subtitle-color: rgba(var(--color-rgb), .7);
+  --focus-shadow-color: rgba(var(--orange-rgb), .5);
+  --selection-background-color: #ff9e40; /* If we were to use rgb(var(--orange-rgb)) what we would get would end up looking too red. This is because the browser automatically tints/alters lighter selection background colors. For example if you specify #fff you end up with something closer to #a4a4a4. So we specify a more saturated and lighter orange to componensate such that the final composited color is as close rgb(var(--orange-rgb)) as possible */
+  --selection-color: #fff;
+}
+
+html[theme="light"] {
+  --color-rgb: var(--dark-purple-rgb);
+  --cloudflare-logo-wordmark-color: #414142;
+  --background-color-rgb: 255, 255, 255;
+  --accent-color-rgb: var(--purple-rgb);
+  --nav-link-background-color-hover: rgba(var(--accent-color-rgb), .06);
+  --nav-link-background-color-active: rgba(var(--accent-color-rgb), .1);
+  --input-background-color: rgba(135, 159, 183, .15);
+  --input-placeholder-color: rgba(94, 120, 146, .5);
+  --input-border-color: rgba(66, 89, 111, .15);
+  --input-border-color-focused: rgb(var(--accent-color-rgb));
+  --mobile-content-section-shadow-color: rgba(0, 0, 0, .08);
+  --dialog-background-color-rgb: var(--background-color-rgb);
+  --subtitle-color: rgba(var(--color-rgb), .8);
+  --focus-shadow-color: rgba(var(--accent-color-rgb), .5);
+  --selection-background-color: rgb(var(--dark-purple-rgb));
+  --selection-color: #fff;
+}
+
+::selection {
+  background: var(--selection-background-color);
+  color: var(--selection-color);
+}
+
+html[is-ios][theme="dark"] {
+  /* Workaround WebGL paint bug in iOS */
+  --input-background-color: #2b2b2b;
+}
+
+html[is-ios][theme="light"] {
+  /* Workaround WebGL paint bug in iOS */
+  --input-background-color: #edf1f4;
+}
+
+html[theme="dark"] {
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: 1.5;
+  color: rgb(var(--color-rgb));
+  background: rgb(var(--background-color-rgb));
+}
+
+.Surface {
+  position: relative;
+  overflow: hidden; /* TODO */
+}
+
+html[is-ios],
+html[is-ios] body {
+  /* Would prefer to use 100vh but that doesn’t work on iOS */
+  height: 100%;
+  overflow: hidden;
+}
+
+html[is-ios] .Surface {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-size: 2.1em;
+}
+
+@media (max-width: 1080px), (max-height: 650px) {
+  body {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.6em;
+  }
+}
+
+.CopyLink {
+  text-decoration: none;
+  color: inherit;
+  --underline-size: -.16em;
+  --box-shadow: 0 0 0 var(--focus-shadow-size) var(--focus-shadow-color), inset 0 var(--underline-size) rgb(var(--accent-color-rgb)); /* Workaround for Safari bug - https://bugs.webkit.org/show_bug.cgi?id=185940 */
+  box-shadow: var(--box-shadow);
+  transition: color .3s ease, box-shadow .3s ease;
+}
+
+.CopyLink:hover {
+  color: rgb(var(--accent-color-rgb));
+}
+
+.CopyLink-with-right-arrow,
+.CopyLink-with-right-arrow:hover {
+  --underline-size: 0;
+}
+
+.CopyLink-with-right-arrow {
+  transition: color .3s ease;
+}
+
+.CopyLink-with-right-arrow::after {
+  content: "\00a0→";
+}
+
+.CopyLink.focus-visible {
+  transition: box-shadow .3s ease;
+}
+
+.CopyLink:focus {
+  outline: none;
+}
+
+.CopyLink:not(.focus-visible):focus, .CopyLink:not(:focus) {
+  --focus-shadow-size: 0;
+}
+
+.Button {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  line-height: var(--form-field-line-height);
+  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
+  border-radius: var(--form-field-border-radius);
+  text-decoration: none;
+  transition: box-shadow .3s ease;
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Button.focus-visible:focus {
+  box-shadow: 0 0 0 var(--focus-shadow-size) var(--focus-shadow-color);
+}
+
+.Button.focus-visible:not(:focus) {
+  --focus-shadow-size: 0;
+}
+
+.Button-is-primary {
+  background: rgb(var(--dark-purple-rgb));
+  color: rgb(var(--background-color-rgb));
+}
+
+[theme="dark"] .Button-is-primary {
+  background: rgba(var(--purple-rgb), .35);
+  color: #fff;
+}
+
+.Button[disabled] {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.Button.Button-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button.Button-with-icon .Button--icon {
+  height: 1.5em;
+  width: 1.5em;
+  margin-bottom: .1em;
+  margin-right: .3125em;
+}
+
+.Button.Button-with-icon.Button-google-play-store .Button--text {
+  font-size: .825em;
+  margin-bottom: .0625em;
+}
+
+.LabelInputWrapper {
+  position: relative;
+}
+
+.LabelInputWrapper--label {
+  position: absolute;
+  line-height: 1;
+  top: .25em;
+  left: var(--input-horizontal-padding);
+  pointer-events: none;
+}
+
+.LabelInputWrapper--label-content {
+  font-size: .6em;
+  letter-spacing: .03em;
+  font-weight: 500;
+  height: .9em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.Input {
+  -webkit-appearance: none; /* iOS Safari won’t apply box-shadows without this */
+  color: inherit;
+  background: var(--input-background-color);
+  border: 0;
+  line-height: var(--form-field-line-height);
+  padding: var(--input-top-padding) var(--input-horizontal-padding) var(--input-bottom-padding);
+  border-radius: var(--form-field-border-radius);
+  width: 11em;
+  max-width: 100%;
+  box-shadow:
+    0 0 0 var(--focus-shadow-size) var(--focus-shadow-color),
+    inset 0 0 0 1px var(--input-border-color-focused),
+    inset 0 0 0 1px var(--input-border-color),
+    inset 0 1px var(--input-border-color);
+  transition: box-shadow .3s ease;
+}
+
+@media (max-width: 768px) {
+  .Input {
+    width: 13.7em;
+  }
+}
+
+.Input::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+.Input:focus {
+  outline: none;
+}
+
+.Input:not(:focus) {
+  --focus-shadow-size: 0;
+  --input-border-color-focused: transparent;
+}
+
+.Header {
+  position: absolute;
+  z-index: 10;
+  height: var(--header-height);
+  width: 100%;
+}
+
+.Nav {
+  display: flex;
+  height: 100%;
+}
+
+.Nav--link {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  flex-shrink: 0;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow .3s ease;
+}
+
+@media (max-width: 768px) {
+  .Nav--link:not(:first-child) {
+    display: none; /* TODO - consider adding a mobile nav */
+  }
+}
+
+.Nav--link:hover {
+  background: var(--nav-link-background-color-hover);
+}
+
+.Nav--link:active {
+  background: var(--nav-link-background-color-active);
+}
+
+.Nav--link:focus {
+  outline: none;
+}
+
+.Nav--link.focus-visible:focus {
+  box-shadow: 0 0 0 var(--focus-shadow-size) var(--focus-shadow-color);
+}
+
+.Nav--link.focus-visible:not(:focus) {
+  --focus-shadow-size: 0;
+}
+
+.Nav--link:first-child {
+  margin-right: auto;
+  border-bottom-right-radius: .3125em; /* TODO */
+}
+
+.SectionCopy {
+  display: flex;
+  width: 24em; /* TODO - make variable */
+  text-align: left;
+}
+
+.SectionCopy.SectionCopy-is-right {
+  justify-content: flex-end;
+}
+
+.SectionCopy--title {
+  font-size: 1.75em;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.SectionCopy--description p:not(:last-child) {
+  margin-bottom: .5em;
+}
+
+.DeviceMockup {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 13em;
+  height: 24em;
+}
+
+.DeviceMockup--backdrop {
+  position: absolute;
+  pointer-events: none;
+}
+
+.DeviceMockup--backdrop-blob1 {
+  top: -136%;
+  left: -70%;
+  height: 430%;
+  width: 650%;
+}
+
+.DeviceMockup--backdrop-blob2 {
+  top: -235%;
+  right: -80%;
+  height: 580%;
+  width: 730%;
+}
+
+.DeviceMockup--backdrop-blob3 {
+  top: -300%;
+  left: -30%;
+  height: 550%;
+  width: 500%;
+}
+
+.DeviceMockup--device {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 .5em 1em rgba(var(--black-purple-rgb), .25);
+}
+
+.OneDotLogoAnimated {
+  width: 9em;
+}
+
+.OneDotLogoAnimated.OneDotLogoAnimated-is-centered {
+  margin-left: -2.5em;
+}
+
+.OneDotLogoAnimated.OneDotLogoAnimated-is-large {
+  width: 20em;
+}
+
+.OneDotLogoAnimated.OneDotLogoAnimated-is-large.OneDotLogoAnimated-is-centered {
+  margin-left: -1.25em;
+}
+
+.OneDotLogoAnimated--aspect-ratio-container {
+  position: relative;
+  padding-bottom: calc(var(--aspect-ratio) * 100%);
+}
+
+.OneDotLogoAnimated--canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.CloudflareLogo {
+  color: var(--cloudflare-logo-wordmark-color);
+  display: block;
+  height: 1.84em;
+  width: 5.3em;
+}
+
+.HeroSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 32em;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+html[is-ios] .HeroSection {
+  min-height: 100%;
+}
+
+.HeroSection--content {
+  display: block;
+  text-align: center;
+  width: 40em;
+  padding-bottom: 3.5em; /* TODO */
+  max-width: 100%;
+}
+
+.HeroSection--logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.HeroSection--title {
+  font-size: 1.75em;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: .5em;
+}
+
+@media (max-width: 768px) {
+  .HeroSection--title {
+    font-size: 1.25em;
+  }
+}
+
+.HeroSection-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HeroSection-actions > a:not(:last-child) {
+  margin-right: 1em;
+}
+
+.AppOverviewSection--column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 20em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.AppOverviewSection--content {
+  position: relative;
+  z-index: 2;
+}
+
+.AppOverviewSection--device-mockup {
+  position: relative;
+  z-index: 1;
+  margin-left: 8em; /* TODO - make variable? */
+}
+
+.PerformanceSection--column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 12em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.PerformanceSection--content {
+  margin-bottom: 2em;
+}
+
+.PerformanceSection--figure {
+  /* TODO */
+  background: orange;
+  height: 16em;
+  width: 16em;
+  border-radius: 50%;
+}
+
+.PrivacySection--column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 26em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.PrivacySection--device-mockup {
+  position: relative;
+  z-index: 1;
+  margin-right: 8em; /* TODO - make variable? */
+}
+
+.PrivacySection--content {
+  position: relative;
+  z-index: 2;
+}
+
+.WarpSection--column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 20em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.WarpSection--content {
+  position: relative;
+  z-index: 2;
+}
+
+.WarpSection--device-mockup {
+  position: relative;
+  z-index: 1;
+  margin-left: 4em; /* TODO - make variable? */
+}

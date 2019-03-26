@@ -1,0 +1,18 @@
+.WarpSection--column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 20em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.WarpSection--content {
+  position: relative;
+  z-index: 2;
+}
+
+.WarpSection--device-mockup {
+  position: relative;
+  z-index: 1;
+  margin-left: 4em; /* TODO - make variable? */
+}

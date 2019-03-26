@@ -1,0 +1,17 @@
+{
+  "name": "1.1.1.1-website",
+  "version": "0.0.1",
+  "description": "Source code for https://1.1.1.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-uglify-es": "^1.0.4"
+  }
+}
