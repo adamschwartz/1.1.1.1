@@ -12,9 +12,28 @@
 }
 
 .PerformanceSection--figure {
-  /* TODO */
-  background: orange;
-  height: 16em;
-  width: 16em;
-  border-radius: 50%;
+  width: 20em;
+}
+
+.PerformanceSection--figure-bar {
+  background: #cfcfd7;
+  border-radius: .5em;
+  height: 1em;
+  width: 100%;
+}
+
+.PerformanceSection--figure-bar:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.PerformanceSection--figure-bar:nth-child(1) {
+  width: 20%;
+}
+
+.PerformanceSection--figure-bar:nth-child(2) {
+  width: 50%;
+}
+
+.PerformanceSection--figure-bar:nth-child(3) {
+  background: linear-gradient(90deg, #eeac43, #f15874);
 }
