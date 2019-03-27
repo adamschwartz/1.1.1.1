@@ -1,7 +1,5 @@
 .EasterEggSection {
   background: rgb(var(--black-purple-rgb));
-  border-top-left-radius: 5em;
-  border-top-right-radius: 5em;
 }
 
 .EasterEggSection--column {

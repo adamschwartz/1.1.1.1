@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 30em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 36em;
   width: 100%;
 }
 
