@@ -37,7 +37,9 @@ function css() {
     "./css/components/app-overview-section.css",
     "./css/components/performance-section.css",
     "./css/components/privacy-section.css",
-    "./css/components/warp-section.css"
+    "./css/components/warp-section.css",
+    "./css/components/footer-section.css",
+    "./css/components/easter-egg-section.css"
   ])
     .pipe(concat("index.css"))
     // .pipe(minifyCSS())

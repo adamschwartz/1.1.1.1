@@ -1,0 +1,27 @@
+.FooterSection--column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 30em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.FooterSection--content {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2em;
+}
+
+.FooterSection--backdrop-blob4 {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  top: -22em;
+  width: 144em;
+  left: -509em;
+  right: -500em;
+  margin-left: auto;
+  margin-right: auto;
+}

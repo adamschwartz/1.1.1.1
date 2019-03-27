@@ -1341,8 +1341,10 @@ if (isBrowser === true) {
 
         const frame = () => {
           requestAnimationFrame(() => {
-            position = (position + .3) % w
-            draw()
+            if (document.scrollingElement.scrollTop < window.outerHeight) {
+              position = (position + .3) % w
+              draw()
+            }
             frame()
           })
         }
@@ -1380,6 +1382,7 @@ if (isBrowser === true) {
       draw() {
         if (this.translateY === this.lastDrawnTranslateY) return
         this.el.style.transform = `translate3d(0, ${ this.translateY }rem, 0)`
+        // this.el.style.setProperty('--translateY', `${ this.translateY }em`) // TODO - slower?
         this.lastDrawnTranslateY = this.translateY
         if (this.progressWasEverSet) this.wasEverDrawn = true
       }
@@ -1395,7 +1398,7 @@ if (isBrowser === true) {
 
       setTargetFromProgress(progress) {
         this.progressWasEverSet = true
-        this.targetTranslateY = this.normalize(70 * ((50 - progress) / 100) * (1 / (this.depth * 3)))
+        this.targetTranslateY = this.normalize(65 * ((50 - progress) / 100) * (1 / (this.depth * 3)))
       }
     }
 
@@ -1403,6 +1406,7 @@ if (isBrowser === true) {
 
     depthRootEls.forEach((el) => {
       const depthElInstances = Array.from(el.querySelectorAll('[data-depth]')).map((el) => new DepthEl(el))
+      const scrollEl = el.querySelector('[data-depth-perspective-scroll-anchor]')
 
       const update = (_, p) => {
         const progress = Math.max(0, Math.min(100, p))
@@ -1413,7 +1417,7 @@ if (isBrowser === true) {
       }
 
       basicScroll.create({
-        elem: el,
+        elem: scrollEl,
         from: 'top-bottom', // TODO - make setting?
         to: 'bottom-top',
         inside: update,
@@ -1432,35 +1436,11 @@ if (isBrowser === true) {
     })
   }
 
-  const initSectionCopyTransitions = () => {
-    document.querySelectorAll('.SectionCopy').forEach((elem) => {
-      basicScroll.create({
-        elem: elem,
-        from: 'top-bottom',
-        to: 'bottom-bottom',
-        direct: true,
-        props: {
-          opacity: {
-            from: 0,
-            to: 1,
-            easing: 'easeInOut'
-          },
-          '--translateY': {
-            from: '7rem',
-            to: '0em',
-            easing: 'easeInOut'
-          }
-        }
-      }).start()
-    })
-  }
-
   const init = () => {
     initThemeSwitcher()
     initBalanceText()
     initOneDotLogosAnimated()
     initDepthPerspectiveRoots()
-    initSectionCopyTransitions()
   }
 
   init()

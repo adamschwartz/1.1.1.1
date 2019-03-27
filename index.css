@@ -373,12 +373,24 @@ body {
   margin-bottom: .5em;
 }
 
+.SectionCopy.SectionCopy-is-centered {
+  display: block;
+  width: 30em; /* TODO - make variable */
+  text-align: center;
+}
+
+.SectionCopy.SectionCopy-is-centered .SectionCopy--title,
+.SectionCopy.SectionCopy-is-centered .SectionCopy--description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .DeviceMockup {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 13em;
-  height: 24em;
+  width: 14em;
+  height: 28em;
 }
 
 .DeviceMockup--backdrop {
@@ -389,13 +401,13 @@ body {
 .DeviceMockup--backdrop-blob1 {
   top: -136%;
   left: -70%;
-  height: 430%;
-  width: 650%;
+  height: 421%;
+  width: 616%
 }
 
 .DeviceMockup--backdrop-blob2 {
-  top: -235%;
-  right: -80%;
+  top: -242%;
+  right: -70%;
   height: 580%;
   width: 730%;
 }
@@ -411,9 +423,18 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
+  padding: 2.5em .375em;
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 .5em 1em rgba(var(--black-purple-rgb), .25);
+  border-radius: 1.75em;
+  box-shadow: inset 0 .25em .5em .0625em #fff, inset 0 -.3em 1em rgba(var(--black-purple-rgb), .15), 0 .125em .375em rgba(var(--black-purple-rgb), .05), 0 .5em 1em rgba(var(--black-purple-rgb), .1);
+}
+
+.DeviceMockup--device-display {
+  height: 100%;
+  width: 100%;
+  box-shadow: inset 0 0 0 .0625em rgba(var(--black-purple-rgb), .1);
+  border-radius: .25em;
+  background: rgba(var(--black-purple-rgb), .2);
 }
 
 .OneDotLogoAnimated {
@@ -539,12 +560,32 @@ html[is-ios] .HeroSection {
   margin-bottom: 2em;
 }
 
+/* TODO */
 .PerformanceSection--figure {
-  /* TODO */
-  background: orange;
-  height: 16em;
-  width: 16em;
-  border-radius: 50%;
+  width: 20em;
+}
+
+.PerformanceSection--figure-bar {
+  background: #cfcfd7;
+  border-radius: .5em;
+  height: 1em;
+  width: 100%;
+}
+
+.PerformanceSection--figure-bar:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.PerformanceSection--figure-bar:nth-child(1) {
+  width: 20%;
+}
+
+.PerformanceSection--figure-bar:nth-child(2) {
+  width: 50%;
+}
+
+.PerformanceSection--figure-bar:nth-child(3) {
+  background: linear-gradient(90deg, #eeac43, #f15874);
 }
 
 .PrivacySection--column {
@@ -570,7 +611,7 @@ html[is-ios] .HeroSection {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 20em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 18em; /* TODO - make responsive? use vh units? */
   width: 100%;
 }
 
@@ -583,4 +624,48 @@ html[is-ios] .HeroSection {
   position: relative;
   z-index: 1;
   margin-left: 4em; /* TODO - make variable? */
+}
+
+.FooterSection--column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 2em 30em; /* TODO - make responsive? use vh units? */
+  width: 100%;
+}
+
+.FooterSection--content {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2em;
+}
+
+.FooterSection--backdrop-blob4 {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  top: -22em;
+  width: 144em;
+  left: -509em;
+  right: -500em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.EasterEggSection {
+  background: rgb(var(--black-purple-rgb));
+  border-top-left-radius: 5em;
+  border-top-right-radius: 5em;
+}
+
+.EasterEggSection--column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1500vh 2em 12em;
+  width: 100%;
 }

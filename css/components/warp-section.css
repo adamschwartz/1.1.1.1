@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 20em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 18em; /* TODO - make responsive? use vh units? */
   width: 100%;
 }
 

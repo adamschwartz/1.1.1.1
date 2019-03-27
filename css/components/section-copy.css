@@ -18,3 +18,15 @@
 .SectionCopy--description p:not(:last-child) {
   margin-bottom: .5em;
 }
+
+.SectionCopy.SectionCopy-is-centered {
+  display: block;
+  width: 30em; /* TODO - make variable */
+  text-align: center;
+}
+
+.SectionCopy.SectionCopy-is-centered .SectionCopy--title,
+.SectionCopy.SectionCopy-is-centered .SectionCopy--description {
+  margin-left: auto;
+  margin-right: auto;
+}
