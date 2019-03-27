@@ -18,7 +18,7 @@ html[is-ios] .HeroSection {
   display: block;
   text-align: center;
   width: 40em;
-  padding-bottom: 3.5em; /* TODO */
+  padding-bottom: 3.5em;
   max-width: 100%;
 }
 

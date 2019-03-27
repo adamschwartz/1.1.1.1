@@ -1,6 +1,6 @@
 .Surface {
   position: relative;
-  overflow: hidden; /* TODO */
+  overflow: hidden;
 }
 
 html[is-ios],

@@ -2,14 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 26em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 26em;
   width: 100%;
 }
 
 .PrivacySection--device-mockup {
   position: relative;
   z-index: 1;
-  margin-right: 8em; /* TODO - make variable? */
+  margin-right: 8em;
 }
 
 .PrivacySection--content {

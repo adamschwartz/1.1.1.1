@@ -1382,7 +1382,6 @@ if (isBrowser === true) {
       draw() {
         if (this.translateY === this.lastDrawnTranslateY) return
         this.el.style.transform = `translate3d(0, ${ this.translateY }rem, 0)`
-        // this.el.style.setProperty('--translateY', `${ this.translateY }em`) // TODO - slower?
         this.lastDrawnTranslateY = this.translateY
         if (this.progressWasEverSet) this.wasEverDrawn = true
       }
@@ -1418,7 +1417,7 @@ if (isBrowser === true) {
 
       basicScroll.create({
         elem: scrollEl,
-        from: 'top-bottom', // TODO - make setting?
+        from: 'top-bottom',
         to: 'bottom-top',
         inside: update,
         outside: update

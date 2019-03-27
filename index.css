@@ -111,7 +111,7 @@ html {
 
 .Surface {
   position: relative;
-  overflow: hidden; /* TODO */
+  overflow: hidden;
 }
 
 html[is-ios],
@@ -349,12 +349,12 @@ body {
 
 .Nav--link:first-child {
   margin-right: auto;
-  border-bottom-right-radius: .3125em; /* TODO */
+  border-bottom-right-radius: .3125em;
 }
 
 .SectionCopy {
   display: flex;
-  width: 24em; /* TODO - make variable */
+  width: 24em;
   text-align: left;
 }
 
@@ -375,7 +375,7 @@ body {
 
 .SectionCopy.SectionCopy-is-centered {
   display: block;
-  width: 30em; /* TODO - make variable */
+  width: 30em;
   text-align: center;
 }
 
@@ -493,7 +493,7 @@ html[is-ios] .HeroSection {
   display: block;
   text-align: center;
   width: 40em;
-  padding-bottom: 3.5em; /* TODO */
+  padding-bottom: 3.5em;
   max-width: 100%;
 }
 
@@ -532,7 +532,7 @@ html[is-ios] .HeroSection {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 20em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 20em;
   width: 100%;
 }
 
@@ -544,7 +544,7 @@ html[is-ios] .HeroSection {
 .AppOverviewSection--device-mockup {
   position: relative;
   z-index: 1;
-  margin-left: 8em; /* TODO - make variable? */
+  margin-left: 8em;
 }
 
 .PerformanceSection--column {
@@ -552,7 +552,7 @@ html[is-ios] .HeroSection {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 12em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 12em;
   width: 100%;
 }
 
@@ -591,14 +591,14 @@ html[is-ios] .HeroSection {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 26em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 26em;
   width: 100%;
 }
 
 .PrivacySection--device-mockup {
   position: relative;
   z-index: 1;
-  margin-right: 8em; /* TODO - make variable? */
+  margin-right: 8em;
 }
 
 .PrivacySection--content {
@@ -610,7 +610,7 @@ html[is-ios] .HeroSection {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 18em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 16em;
   width: 100%;
 }
 
@@ -622,7 +622,7 @@ html[is-ios] .HeroSection {
 .WarpSection--device-mockup {
   position: relative;
   z-index: 1;
-  margin-left: 4em; /* TODO - make variable? */
+  margin-left: 4em;
 }
 
 .FooterSection--column {
@@ -631,7 +631,7 @@ html[is-ios] .HeroSection {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 30em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 36em;
   width: 100%;
 }
 
@@ -645,18 +645,16 @@ html[is-ios] .HeroSection {
   position: absolute;
   z-index: 1;
   pointer-events: none;
-  top: -22em;
+  top: -24em;
   width: 144em;
-  left: -509em;
-  right: -500em;
+  left: -500em;
+  right: -504em;
   margin-left: auto;
   margin-right: auto;
 }
 
 .EasterEggSection {
   background: rgb(var(--black-purple-rgb));
-  border-top-left-radius: 5em;
-  border-top-right-radius: 5em;
 }
 
 .EasterEggSection--column {

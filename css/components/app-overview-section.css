@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em 2em 20em; /* TODO - make responsive? use vh units? */
+  padding: 2em 2em 20em;
   width: 100%;
 }
 
@@ -14,5 +14,5 @@
 .AppOverviewSection--device-mockup {
   position: relative;
   z-index: 1;
-  margin-left: 8em; /* TODO - make variable? */
+  margin-left: 8em;
 }

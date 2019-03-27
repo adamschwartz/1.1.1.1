@@ -41,5 +41,5 @@
 
 .Nav--link:first-child {
   margin-right: auto;
-  border-bottom-right-radius: .3125em; /* TODO */
+  border-bottom-right-radius: .3125em;
 }

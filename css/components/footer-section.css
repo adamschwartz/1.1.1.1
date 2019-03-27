@@ -18,10 +18,10 @@
   position: absolute;
   z-index: 1;
   pointer-events: none;
-  top: -22em;
+  top: -24em;
   width: 144em;
-  left: -509em;
-  right: -500em;
+  left: -500em;
+  right: -504em;
   margin-left: auto;
   margin-right: auto;
 }
