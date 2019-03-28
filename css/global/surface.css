@@ -2,16 +2,3 @@
   position: relative;
   overflow: hidden;
 }
-
-html[is-ios],
-html[is-ios] body {
-  /* Would prefer to use 100vh but that doesn’t work on iOS */
-  height: 100%;
-  overflow: hidden;
-}
-
-html[is-ios] .Surface {
-  height: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}

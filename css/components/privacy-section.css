@@ -9,10 +9,31 @@
 .PrivacySection--device-mockup {
   position: relative;
   z-index: 1;
-  margin-right: 8em;
+  margin-right: var(--section-gutter-size);
 }
 
 .PrivacySection--content {
   position: relative;
   z-index: 2;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .PrivacySection--column {
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 30em;
+  }
+
+  .PrivacySection--content {
+    order: 1;
+  }
+
+  .PrivacySection--device-mockup {
+    order: 2;
+  }
+
+  .PrivacySection--device-mockup {
+    margin-right: 0;
+  }
 }

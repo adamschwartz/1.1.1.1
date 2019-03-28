@@ -9,10 +9,23 @@
 .AppOverviewSection--content {
   position: relative;
   z-index: 2;
+  max-width: 100%;
 }
 
 .AppOverviewSection--device-mockup {
   position: relative;
   z-index: 1;
-  margin-left: 8em;
+  margin-left: var(--section-gutter-size);
+}
+
+@media (max-width: 768px) {
+  .AppOverviewSection--column {
+    flex-direction: column;
+    padding-bottom: 17em;
+    overflow: hidden;
+  }
+
+  .AppOverviewSection--device-mockup {
+    margin-left: 0;
+  }
 }

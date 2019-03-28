@@ -4,3 +4,9 @@
   height: var(--header-height);
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .Header {
+    position: relative;
+  }
+}

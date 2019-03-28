@@ -1,11 +1,18 @@
 .SectionCopy {
   display: flex;
   width: 24em;
+  max-width: 100%;
   text-align: left;
 }
 
 .SectionCopy.SectionCopy-is-right {
   justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .SectionCopy.SectionCopy-is-right {
+    justify-content: flex-start;
+  }
 }
 
 .SectionCopy--title {
@@ -29,4 +36,17 @@
 .SectionCopy.SectionCopy-is-centered .SectionCopy--description {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .SectionCopy.SectionCopy-is-centered {
+    width: 24em;
+    text-align: left;
+  }
+
+  .SectionCopy.SectionCopy-is-centered .SectionCopy--title,
+  .SectionCopy.SectionCopy-is-centered .SectionCopy--description {
+    margin-left: 0;
+    margin-right: auto;
+  }
 }

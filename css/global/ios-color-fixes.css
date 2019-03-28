@@ -1,9 +1,0 @@
-html[is-ios][theme="dark"] {
-  /* Workaround WebGL paint bug in iOS */
-  --input-background-color: #2b2b2b;
-}
-
-html[is-ios][theme="light"] {
-  /* Workaround WebGL paint bug in iOS */
-  --input-background-color: #edf1f4;
-}

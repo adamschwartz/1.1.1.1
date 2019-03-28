@@ -10,10 +10,6 @@
   padding-right: 1em;
 }
 
-html[is-ios] .HeroSection {
-  min-height: 100%;
-}
-
 .HeroSection--content {
   display: block;
   text-align: center;
@@ -26,6 +22,9 @@ html[is-ios] .HeroSection {
   display: flex;
   justify-content: center;
   margin-bottom: 2em;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .HeroSection--title {
@@ -37,12 +36,6 @@ html[is-ios] .HeroSection {
   margin-bottom: .5em;
 }
 
-@media (max-width: 768px) {
-  .HeroSection--title {
-    font-size: 1.25em;
-  }
-}
-
 .HeroSection-actions {
   display: flex;
   align-items: center;
@@ -51,4 +44,29 @@ html[is-ios] .HeroSection {
 
 .HeroSection-actions > a:not(:last-child) {
   margin-right: 1em;
+}
+
+@media (max-width: 768px) {
+  .HeroSection {
+    min-height: auto;
+  }
+
+  .HeroSection {
+    height: auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+
+  .HeroSection--content {
+    padding-bottom: 0;
+  }
+
+  .HeroSection--logo {
+    margin-bottom: 3em;
+  }
+
+  .HeroSection--title {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
 }

@@ -11,6 +11,7 @@
 .FooterSection--content {
   position: relative;
   z-index: 2;
+  max-width: 100%;
   margin-bottom: 2em;
 }
 
@@ -24,4 +25,36 @@
   right: -504em;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .FooterSection {
+    margin-top: -9em;
+  }
+
+  .FooterSection--column {
+    overflow: hidden;
+    padding-bottom: 90em;
+  }
+
+  .FooterSection--backdrop-blob4 {
+    top: 0;
+    width: 75em;
+    left: -504em;
+    right: -500em;
+  }
+}
+
+@media (max-width: 375px) {
+  .FooterSection--column {
+    overflow: hidden;
+    padding-bottom: 60em;
+  }
+
+  .FooterSection--backdrop-blob4 {
+    top: 7em;
+    width: 50em;
+    left: -501em;
+    right: -502em;
+  }
 }

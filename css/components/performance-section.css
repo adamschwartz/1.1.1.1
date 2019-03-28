@@ -9,10 +9,12 @@
 
 .PerformanceSection--content {
   margin-bottom: 2em;
+  max-width: 100%;
 }
 
 .PerformanceSection--figure {
   width: 20em;
+  max-width: 100%;
 }
 
 .PerformanceSection--figure-bar {
@@ -36,4 +38,14 @@
 
 .PerformanceSection--figure-bar:nth-child(3) {
   background: linear-gradient(90deg, #eeac43, #f15874);
+}
+
+@media (max-width: 768px) {
+  .PerformanceSection {
+    margin-top: -4em;
+  }
+
+  .PerformanceSection--column {
+    padding: 2em 2em 4em;
+  }
 }

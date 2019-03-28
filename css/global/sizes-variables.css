@@ -8,4 +8,11 @@ html {
   --button-horizontal-padding: .8em;
   --form-field-border-radius: .375em;
   --form-field-line-height: 1.3;
+  --section-gutter-size: 8em;
+}
+
+@media (max-width: 1080px) {
+  html {
+    --section-gutter-size: 4em;
+  }
 }

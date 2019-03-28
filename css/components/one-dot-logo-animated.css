@@ -1,5 +1,6 @@
 .OneDotLogoAnimated {
   width: 9em;
+  max-width: 100%;
 }
 
 .OneDotLogoAnimated.OneDotLogoAnimated-is-centered {
@@ -12,6 +13,12 @@
 
 .OneDotLogoAnimated.OneDotLogoAnimated-is-large.OneDotLogoAnimated-is-centered {
   margin-left: -1.25em;
+}
+
+@media (max-width: 768px) {
+  .OneDotLogoAnimated.OneDotLogoAnimated-is-large.OneDotLogoAnimated-is-centered {
+    margin-left: -1em;
+  }
 }
 
 .OneDotLogoAnimated--aspect-ratio-container {

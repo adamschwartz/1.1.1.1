@@ -6,6 +6,12 @@
   height: 28em;
 }
 
+@media (max-width: 1080px) {
+  .DeviceMockup {
+    font-size: .9em;
+  }
+}
+
 .DeviceMockup--backdrop {
   position: absolute;
   pointer-events: none;
@@ -32,6 +38,43 @@
   width: 500%;
 }
 
+@media (max-width: 1080px) {
+  .DeviceMockup--backdrop-blob1 {
+    left: -50%;
+  }
+
+  .DeviceMockup--backdrop-blob2 {
+    right: -50%
+  }
+}
+
+@media (max-width: 768px) {
+  .DeviceMockup--backdrop-blob1 {
+    top: -101%;
+    left: -42%;
+    height: 331%;
+    width: 446%;
+  }
+
+  .DeviceMockup--backdrop-blob2 {
+    top: -142%;
+    right: -36%;
+    height: 420%;
+    width: 540%;
+  }
+
+  .DeviceMockup--backdrop-blob3 {
+    top: -126%;
+    left: -22%;
+    height: 367%;
+    width: 360%;
+  }
+
+  .DeviceMockup--backdrop-blob3-desktop-only-blog {
+    fill: transparent;
+  }
+}
+
 .DeviceMockup--device {
   position: relative;
   height: 100%;
@@ -39,13 +82,32 @@
   padding: 2.5em .375em;
   background: #fff;
   border-radius: 1.75em;
-  box-shadow: inset 0 .25em .5em .0625em #fff, inset 0 -.3em 1em rgba(var(--black-purple-rgb), .15), 0 .125em .375em rgba(var(--black-purple-rgb), .05), 0 .5em 1em rgba(var(--black-purple-rgb), .1);
+
+  /* Workaround for Safari bug - https://bugs.webkit.org/show_bug.cgi?id=185940 */
+  --box-shadow: inset 0 .25em .5em .0625em #fff, inset 0 -.3em 1em rgba(var(--black-purple-rgb), .15), 0 .125em .375em rgba(var(--black-purple-rgb), .05), 0 .5em 1em rgba(var(--black-purple-rgb), .1);
+  box-shadow: var(--box-shadow);
 }
 
 .DeviceMockup--device-display {
   height: 100%;
   width: 100%;
-  box-shadow: inset 0 0 0 .0625em rgba(var(--black-purple-rgb), .1);
+  --box-shadow: inset 0 0 0 .0625em rgba(var(--black-purple-rgb), .1); /* Workaround for Safari bug - https://bugs.webkit.org/show_bug.cgi?id=185940 */
+  box-shadow: var(--box-shadow);
   border-radius: .25em;
   background: rgba(var(--black-purple-rgb), .2);
+}
+
+.DeviceMockup--device-display-mockup-1 {
+  background-image: url("resources/rasterized/mockup-1.png");
+  background-size: 100% 100%;
+}
+
+.DeviceMockup--device-display-mockup-2 {
+  background-image: url("resources/rasterized/mockup-2.png");
+  background-size: 100% 100%;
+}
+
+.DeviceMockup--device-display-mockup-3 {
+  background-image: url("resources/rasterized/mockup-3.png");
+  background-size: 100% 100%;
 }

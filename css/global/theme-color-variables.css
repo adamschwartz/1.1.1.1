@@ -4,7 +4,7 @@ html[theme="dark"] {
   --background-color-rgb: var(--black-purple-rgb);
   --accent-color-rgb: var(--purple-rgb);
   --nav-link-background-color-hover: rgba(255, 255, 255, .05);
-  --nav-link-background-color-active: rgba(0, 0, 0, .2);
+  --nav-link-background-color-active: rgba(0, 0, 0, .12);
   --input-background-color: rgba(255, 255, 255, .06);
   --input-placeholder-color: rgba(var(--color-rgb), .4);
   --input-border-color: transparent;

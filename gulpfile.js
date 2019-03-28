@@ -12,7 +12,6 @@ function css() {
     "./css/global/brand-color-variables.css",
     "./css/global/theme-color-variables.css",
     "./css/global/selection-color.css",
-    "./css/global/ios-color-fixes.css",
     "./css/global/font-smoothing.css",
     "./css/global/html.css",
     "./css/global/surface.css",

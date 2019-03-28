@@ -43,3 +43,12 @@
   margin-right: auto;
   border-bottom-right-radius: .3125em;
 }
+
+.Nav--link:last-child {
+  border-bottom-left-radius: .3125em;
+}
+
+.Nav--link:not(:first-child):not(:last-child) {
+  border-bottom-right-radius: .3125em;
+  border-bottom-left-radius: .3125em;
+}

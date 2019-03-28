@@ -1275,14 +1275,6 @@ if (isBrowser === true) {
   window.addEventListener('resize', () => { setIsMobile() }, { passive: true })
   setIsMobile()
 
-  let scrollingElement = document.scrollingElement || document.documentElement
-  const isMobileSafari = /iPad|iPhone|iPod/.test(navigator.userAgent)
-  if (isMobileSafari) {
-    document.documentElement.setAttribute('is-ios', '')
-    scrollingElement = document.querySelector('.Surface')
-    basicScroll.setScrollingElement(scrollingElement)
-  }
-
   const initThemeSwitcher = () => {
     document.documentElement.addEventListener('dblclick', () => {
       if (document.documentElement.getAttribute('theme') === 'dark') {
@@ -1349,8 +1341,6 @@ if (isBrowser === true) {
           })
         }
 
-        frame()
-
         const draw = () => {
           canvas.width = (wm * dPR) / 2
           canvas.height = (hm * dPR) / 2
@@ -1361,6 +1351,9 @@ if (isBrowser === true) {
           context.globalCompositeOperation = 'xor'
           context.drawImage(mask, 0, 0, (wm * dPR) / 2, (hm * dPR) / 2)
         }
+
+        frame()
+        draw()
       })
     }
   }
@@ -1397,7 +1390,10 @@ if (isBrowser === true) {
 
       setTargetFromProgress(progress) {
         this.progressWasEverSet = true
-        this.targetTranslateY = this.normalize(65 * ((50 - progress) / 100) * (1 / (this.depth * 3)))
+        const depth = isMobile ? 2 : this.depth
+        const progressCenter = isMobile ? 100 : 50
+        this.targetTranslateY = this.normalize(65 * ((progressCenter - progress) / 100) * (1 / (depth * 3)))
+        if (isMobile && this.depth !== 1) this.targetTranslateY = 0
       }
     }
 

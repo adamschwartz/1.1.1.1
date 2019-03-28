@@ -8,11 +8,29 @@
 
 .WarpSection--content {
   position: relative;
+  max-width: 100%;
   z-index: 2;
 }
 
 .WarpSection--device-mockup {
   position: relative;
   z-index: 1;
-  margin-left: 4em;
+  margin-left: calc(var(--section-gutter-size) / 2);
+}
+
+@media (max-width: 768px) {
+  .WarpSection {
+    margin-top: -9em;
+  }
+
+  .WarpSection--column {
+    flex-direction: column;
+    padding-top: 6em;
+    padding-bottom: 24em;
+    overflow: hidden;
+  }
+
+  .WarpSection--device-mockup {
+    margin-left: 0;
+  }
 }
